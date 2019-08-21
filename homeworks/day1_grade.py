@@ -14,10 +14,10 @@ from sys import argv
 
 
 # Check if user has entered the correct argument
-#TODO: Check if number argument has at least a character that isn't a number
-if len(argv) != 2 and argv[1].lstrip("-").isnumeric():
-    print("Usage: python hw_grade.py <grade in numbers>")
-    print("Ex: python hw_grade.py 90")
+#TODO: Check if argument is a number or a float
+if len(argv) != 2:
+    print("Usage: python day1_grade.py <grade in numbers>")
+    print("Ex: python day1_grade.py 90")
     exit(1)
 
 # Get user's input and convert to integer

@@ -9,9 +9,9 @@ Date created: 20190821
 from sys import argv
 
 if (len(argv) != 2 or not argv[1].isdigit()):
-    print("Usage: python hw_fibonacci.py <int n>")
+    print("Usage: python day1_fibonacci.py <int n>")
     print("Where int is a positive integer")
-    print("Ex: python hw_fibonacci.py 10")
+    print("Ex: python day1_fibonacci.py 10")
     exit(1)
 
 n = int(argv[1])

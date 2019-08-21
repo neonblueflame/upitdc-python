@@ -10,14 +10,14 @@ Date created: 20190820
 from sys import argv
 
 
-# Check if user has entered the correct arguments
+# Check if user has entered the correct argument
 #TODO: Check if number argument has at least a character that isn't a number
 if (len(argv) != 3 
         or (not argv[1].lstrip("-").isdigit() 
             and not argv[2].lstrip("-").isdigit())):
     
-    print("Usage: python hw_pow.py <int n> <int p>")
-    print("Ex: python hw_pow.py 2 2")
+    print("Usage: python day1_pow.py <int n> <int p>")
+    print("Ex: python day1_pow.py 2 2")
     exit(1)
 
 n = int(argv[1])

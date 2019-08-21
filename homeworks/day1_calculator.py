@@ -18,8 +18,8 @@ if ( len(argv) != 4
         or (not argv[1].lstrip("-").isdigit() 
             and not argv[2].lstrip("-").isdigit()) ):
     
-    print("Usage: python hw_calculator.py <int> <int> <operator>")
-    print("Ex: python hw_calculator.py 1 1 add")
+    print("Usage: python day1_calculator.py <int> <int> <operator>")
+    print("Ex: python day1_calculator.py 1 1 add")
     print(f"Operations: {', '.join(operators)}")
     exit(1)
 
