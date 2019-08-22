@@ -12,7 +12,6 @@ from sys import argv
 operators = ["add", "multiply", "subtract", "divide"]
 
 # Check if user has entered the correct arguments
-#TODO: Check if number argument has at least a character that isn't a number
 if ( len(argv) != 4 
         or argv[3].lower() not in operators
         or (not argv[1].lstrip("-").isdigit() 

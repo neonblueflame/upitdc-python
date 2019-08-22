@@ -10,19 +10,27 @@ Date created: 20180822
 # Imports
 from sys import argv
 
+
+usage_msg = """
+Usage: python day1_conversion.py <float value> <str value currency>
+Where value currency can be: peso, dollar
+Ex: python day1_conversion.py 10.0 peso
+"""
+
 # Check if user has entered the correct argument
-#TODO: Check if argument is a number or a float
 if len(argv) != 3:
-    print("Usage: python day1_conversion.py <float value> <str value currency>")
-    print("Where value currency can be: peso, dollar")
-    print("Ex: python day1_conversion.py 10.0 peso")
+    print(usage_msg)
     exit(1)
 
-print("What is the current conversion rate?")
-rate = float(input())
-value = float(argv[1])
+# Check if rate and amount is a proper float value
+try:
+    print("What is the current conversion rate?")
+    rate = float(input())
+    value = float(argv[1])
+except ValueError:
+    print(usage_msg)
+    exit(2)
 
-#TODO: Study this more :(
 if argv[2].lower() == "peso":
     conversion_currency = "dollar"
     conversion_value = value / rate
@@ -32,7 +40,7 @@ elif argv[2].lower() == "dollar":
     conversion_value = value * rate
     
 else:
-    print("Currency can be: peso, dollar")
-    exit(2)
+    print(usage_msg)
+    exit(3)
     
-print(f"{value} in {conversion_currency}: {conversion_value}")
+print(f"{value} {argv[2]} in {conversion_currency}: {conversion_value}")

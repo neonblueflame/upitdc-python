@@ -13,15 +13,22 @@ Date created: 20190820
 from sys import argv
 
 
+usage_msg = """
+Usage: python day1_grade.py <float grade in numbers>
+Ex: python day1_grade.py 90.1
+"""
+
 # Check if user has entered the correct argument
-#TODO: Check if argument is a number or a float
 if len(argv) != 2:
-    print("Usage: python day1_grade.py <grade in numbers>")
-    print("Ex: python day1_grade.py 90")
+    print(usage_msg)
     exit(1)
 
-# Get user's input and convert to integer
-raw_grade = float(argv[1])
+# Get user's input and convert to float
+try:
+    raw_grade = float(argv[1])
+except ValueError:
+    print(usage_msg)
+    exit(2)
 
 print("Equivalent grade: ")
 

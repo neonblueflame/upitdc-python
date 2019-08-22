@@ -10,18 +10,22 @@ Date created: 20190820
 from sys import argv
 
 
+usage_msg = """
+Usage: python day1_pow.py <int n> <int p>
+Ex: python day1_pow.py 2 2
+"""
+
 # Check if user has entered the correct argument
-#TODO: Check if number argument has at least a character that isn't a number
-if (len(argv) != 3 
-        or (not argv[1].lstrip("-").isdigit() 
-            and not argv[2].lstrip("-").isdigit())):
-    
-    print("Usage: python day1_pow.py <int n> <int p>")
-    print("Ex: python day1_pow.py 2 2")
+if len(argv) != 3:
+    print(usage_msg)
     exit(1)
 
-n = int(argv[1])
-p = int(argv[2])
+try:
+    n = int(argv[1])
+    p = int(argv[2])
+except ValueError:
+    print(usage_msg)
+    exit(2)
 
 # Shortcut
 # print(f"{n} ** {p} = {n ** p}")
