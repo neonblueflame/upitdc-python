@@ -29,6 +29,11 @@ except ValueError:
     print(usage_msg)
     exit(2)
 
+# Check if year is negative
+if year < 0:
+    print(usage_msg)
+    exit(3)
+
 if (year % 100 == 0) and (year % 400 == 0):
     print(f"{argv[1]} is a leap year")
     
